@@ -15,7 +15,7 @@
         src: backend.service
         dest: /etc/systemd/system/backend.service
     - name: Add Application user
-      ansible.builtin..user:
+      ansible.builtin.user:
         name: expense
     - name: Delete old app content
       ansible.builtin.file:
