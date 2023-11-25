@@ -14,7 +14,6 @@
       ansible.builtin.copy:
         src: backend.service
         dest: /etc/systemd/system/backend.service
-
     - name: Add Application user
       ansible.builtin.user:
         name: expense
@@ -28,7 +27,7 @@
         state: directory
     - name: Download and extract ap content
       ansible.builtin.unarchive:
-        src: https://exense-artifacts.s3.amazonaws.com/backend.zip
+        src: https://expense-artifacts.s3.amazonaws.com/backend.zip
         dest: /app
         remote_src: yes
     - name: Download NodeJs Dependencies
@@ -40,7 +39,7 @@
         name: Mysql
         state: present
     - name: Load schema
-      ansible.builtin.shell: mysql -h mysql-dev.devopsmins.online -uroot -p${¨MYSQL_ROOT_PASSWORD} < /app/schema/backend.sql &>>$log_file
+      ansible.builtin.shell: mysql -h mysql-dev.devopsmins.online -uroot -p${¨MYSQL_ROOT_PASSWORD} < /app/schema/backend.sql
     - name: Start backend service
       ansible.builtin.systemd:
         name: backend
