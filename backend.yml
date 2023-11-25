@@ -31,7 +31,7 @@
         dest: /app
         remote_src: yes
     - name: Download NodeJs Dependencies
-      ansible.builtin.shel: npm install
+      ansible.builtin.shell: npm install
       args:
         chdir: /app
     - name: Install MYSql Client
