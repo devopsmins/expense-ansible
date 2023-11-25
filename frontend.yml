@@ -8,7 +8,7 @@
         state: present
     - name: Coy expense config file
       ansible.builtin.copy:
-        src: expense..conf
+        src: expense.conf
         dest: /etc/nginx/default.d/expense.conf
     - name: clean old Nginx Dir
       ansible.builtin.file:
