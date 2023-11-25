@@ -10,7 +10,7 @@
       ansible.builtin.dnf:
         name: NodeJs
         state: Present
-    - name: Coy Backend Services file
+    - name: Copy Backend Services file
       ansible.builtin.copy:
         src: backend.service
         dest: /etc/systemd/system/backend.service
