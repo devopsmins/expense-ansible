@@ -14,7 +14,7 @@
         state: present
     - name: Start MySQL service
       ansible.builtin.systemd:
-        name: mysqlId
+        name: mysqld
         state: restarted
         enabled: yes
     - name: Set MYSQL Password
