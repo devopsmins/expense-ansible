@@ -26,7 +26,7 @@
         path: /app
         state: directory
     - name: Download and extract ap content
-      ansible.builtinunarchive:
+      ansible.builtin.unarchive:
         src: https://exense-artifacts.s3.amazonaws.com/backend.zip
         dest: /app
         remote_src: yes
