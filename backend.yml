@@ -1,7 +1,6 @@
 - name: Expense Frontend setup
   hosts: localhost
   become: yes
-   ExpenseApp@1=$1
   tasks:
     - name: Disable NodeJs default version
       ansible.builtin.shell: dnf module disable nodejs -y
