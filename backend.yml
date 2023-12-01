@@ -34,9 +34,9 @@
       ansible.builtin.shell: npm install
       args:
         chdir: /app
-    - name: Install MYSql Client
+    - name: Install MYSQL Client
       ansible.builtin.dnf:
-        name: Mysql
+        name: mysql
         state: present
     - name: Load schema
       ansible.builtin.shell: mysql -h mysql-dev.devopsmins.online -uroot -p${{MYSQL_ROOT_PASSWORD}} < /app/schema/backend.sql
