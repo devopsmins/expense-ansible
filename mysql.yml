@@ -4,7 +4,7 @@
   tasks:
     - name: Disable MYSQL default version
       ansible.builtin.shell: dnf module disable mysql -y
-    - name: coy MYSQL Repo file
+    - name: copy MYSQL Repo file
       ansible.builtin.copy:
         src: mysql.repo
         dest: /etc/yum.repos.d/mysql.repo
