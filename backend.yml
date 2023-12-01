@@ -8,7 +8,7 @@
       ansible.builtin.shell: dnf module enable nodejs:18 -y
     - name: Install NodeJs
       ansible.builtin.dnf:
-        name: NodeJs
+        name: nodejs
         state: present
     - name: Copy Backend Services file
       ansible.builtin.copy:
@@ -39,7 +39,7 @@
         name: Mysql
         state: present
     - name: Load schema
-      ansible.builtin.shell: mysql -h mysql-dev.devopsmins.online -uroot -p${¨MYSQL_ROOT_PASSWORD} < /app/schema/backend.sql
+      ansible.builtin.shell: mysql -h mysql-dev.devopsmins.online -uroot -p${{MYSQL_ROOT_PASSWORD}} < /app/schema/backend.sql
     - name: Start backend service
       ansible.builtin.systemd:
         name: backend
