@@ -1,5 +1,5 @@
 - name: Expense Frontend setup
-  hosts: localhost
+  hosts: all
   become: yes
   tasks:
     - name: Disable NodeJs default version
