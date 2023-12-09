@@ -10,39 +10,29 @@
   ansible.builtin.template:
     src: backend.service
     dest: /etc/systemd/system/backend.service
-
 - name: Import Common Role- App Pre-requisites
   ansible.builtin.import_role:
      name: common
      tasks_from: app-prereq
-
   vars:
     app_dir: /app
     component: backend
-
-
 - name: Add Application user
   ansible.builtin.user:
     name: expense
-
 - name: Download NodeJs Dependencies
   ansible.builtin.shell: npm install
   args:
     chdir: /app
-
 - name: Install MYSQL Client
   ansible.builtin.dnf:
     name: mysql
     state: present
-
 - name: Load schema
   ansible.builtin.shell: mysql -h mysql-{{env}}.devopsmins.online -uroot -p{{MYSQL_ROOT_PASSWORD}} < /app/schema/backend.sql
-
-
 - name: Start backend service
   ansible.builtin.systemd:
     name: backend
     state: restarted
     enabled: yes
     daemon-reload: yes
-
