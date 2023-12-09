@@ -20,6 +20,7 @@
     app_dir: /app
     component: backend
 
+
 - name: Add Application user
   ansible.builtin.user:
     name: expense
