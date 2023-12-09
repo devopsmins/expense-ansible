@@ -7,7 +7,7 @@
     name: nodejs
     state: present
 - name: Copy Backend Services file
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: backend.service
     dest: /etc/systemd/system/backend.service
 
@@ -29,12 +29,16 @@
   ansible.builtin.shell: npm install
   args:
     chdir: /app
+
 - name: Install MYSQL Client
   ansible.builtin.dnf:
     name: mysql
     state: present
+
 - name: Load schema
   ansible.builtin.shell: mysql -h mysql-{{env}}.devopsmins.online -uroot -p{{MYSQL_ROOT_PASSWORD}} < /app/schema/backend.sql
+
+
 - name: Start backend service
   ansible.builtin.systemd:
     name: backend
