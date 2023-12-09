@@ -3,7 +3,7 @@
     name: nginx
     state: present
 
-- name: Coy expense config file
+- name: Copy expense config file
   ansible.builtin.template:
     src: expense.conf
     dest: /etc/nginx/default.d/expense.conf
