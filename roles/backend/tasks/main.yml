@@ -34,7 +34,7 @@
     name: mysql
     state: present
 - name: Load schema
-  ansible.builtin.shell: mysql -h mysql-dev.devopsmins.online -uroot -p{{MYSQL_ROOT_PASSWORD}} < /app/schema/backend.sql
+  ansible.builtin.shell: mysql -h mysql-{{env}}.devopsmins.online -uroot -p{{MYSQL_ROOT_PASSWORD}} < /app/schema/backend.sql
 - name: Start backend service
   ansible.builtin.systemd:
     name: backend
