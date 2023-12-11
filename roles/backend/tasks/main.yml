@@ -29,7 +29,7 @@
     name: mysql
     state: present
 - name: Load schema
-  ansible.builtin.shell: mysql -h mysql-{{env}}.devopsmins.online -uroot -p{{MYSQL_ROOT_PASSWORD}} < /app/schema/backend.sql
+  ansible.builtin.shell: mysql -h {{ lookup('aws_ssm', 'backend.{{env}}.DB_HOST', region='us-east-1' ) }} -u{{ lookup('aws_ssm', 'backend.{{env}}.DB_USER', region='us-east-1' ) }} -p{{ lookup('aws_ssm', 'backend.{{env}}.DB_PASS', region='us-east-1' ) }} < /app/schema/backend.sql
 - name: Start backend service
   ansible.builtin.systemd:
     name: backend
