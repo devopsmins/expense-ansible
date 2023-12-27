@@ -149,7 +149,7 @@ setup.kibana:
   #password: "changeme"
 
   # ------------------------------ Logstash Output -------------------------------
-  output.logstash:
+output.logstash:
   # The Logstash hosts
   hosts: ["172.31.18.90:5044"]
 
