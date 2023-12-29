@@ -79,9 +79,7 @@
           "editorMode": "code",
           "expr": "up{name=\"frontend-dev\"}",
           "instant": false,
-        {% raw %},
-          "legendFormat": "{{job}}",
-        {% endraw %},
+          "legendFormat": "__auto",
           "range": true,
           "refId": "A"
         }
@@ -199,6 +197,6 @@
   "timezone": "",
   "title": "New dashboard",
   "uid": "cc5d2d7b-c6ee-4d98-a452-c8c7cd7513ca",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
