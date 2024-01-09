@@ -1,14 +1,13 @@
-#- name: Create dashboard File
- # ansible.builtin.template:
- #   src: dashboard.json
-   # dest: /tmp/dashboard.json
+- name: Create dashboard File
+  ansible.builtin.template:
+    src: dashboard.json
+    dest: /tmp/dashboard.json
 
-#- name: Add Grafana dashboard
- ## community.grafana.grafana_dashboard:
-  #   grafana_url: http://54.209.112.73:3000
-     #grafana_api_key: "{{ lookup('aws_ssm', 'garafana_api_key', region='us-east-1' ) }}"
-  #   grafana_api_key: "glsa_D54v1DcSyQlnkmsE61F0zYc8wPOgStzc_813034af"
-  #   state: present
-   #  commit_message: Updated by ansible
-   #  overwrite: yes
-    # path: /tmp/dashboard.json
+- name: Add Grafana dashboard
+  community.grafana.grafana_dashboard:
+    grafana_url: http://172.31.46.120:3000
+    grafana_api_key: "glsa_D54v1DcSyQlnkmsE61F0zYc8wPOgStzc_813034af"
+    state: present
+    commit_message: Updated by ansible
+    overwrite: yes
+    path: /tmp/dashboard.json
