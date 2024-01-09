@@ -1,10 +1,10 @@
-#groups:
-#- name: node_exporter
- # rules:
-  #- alert: InstanceDown
-   # expr: up == 1
-    #for: 1m
-    #labels:
-     # severity: critical
-    #annotations:
-     # summary: Instance Down Alert
+groups:
+- name: node_exporter
+  rules:
+  - alert: InstanceDown
+    expr: up < 1
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: Instance Down Alert
