@@ -26,7 +26,7 @@ scrape_configs:
       - targets: ["localhost:9090"]
   - job_name: ec2-nodes
     static_configs:
-      - targets: [ "172.31.38.225:9090" ]
+      - targets: [ "172.31.38.225:9100" ]
     relabel_configs:
       - source_labels: [__meta_ec2_instance_id]
         target_label: instance_id
