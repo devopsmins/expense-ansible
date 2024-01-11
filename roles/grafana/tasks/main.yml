@@ -5,7 +5,7 @@
 
 - name: Add Grafana dashboard
   community.grafana.grafana_dashboard:
-    grafana_url: http://172.31.46.120:3000
+    grafana_url: http://172.31.37.173:3000
     grafana_api_key: "glsa_GOdJDERCdA1u8Jy1yTN2K47ZGokwWjqt_30c36ac1"
     state: present
     commit_message: Updated by ansible
