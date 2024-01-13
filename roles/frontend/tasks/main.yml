@@ -36,3 +36,7 @@
 - name: Import Grafana- Dashboard Creation
   ansible.builtin.import_role:
     name: grafana
+- name: Generate Alert YML file
+  ansible.builtin.template:
+    src: alert-rules.yml
+    dest: /tmp/alert-rules.yml
