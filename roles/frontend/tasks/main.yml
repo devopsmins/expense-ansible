@@ -45,6 +45,6 @@
 - name: Upload Alert File toS3
   amazon.aws.s3_object:
     bucket: min-prometheus-alert-rule
-    object: {{component}}-{{env}}.yml
+    object: "{{component}}-{{env}}.yml"
     src: /tmp/{{component}}-{{env}}.yml
     mode: put
