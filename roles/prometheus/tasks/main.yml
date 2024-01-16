@@ -8,11 +8,11 @@
     src: common.yml
     dest: /opt/prometheus/alert-rules/common.yml
 
-- name: List All files in Bucket
-  amazon.aws.s3_object:
-    bucket: min-prometheus-alert-rule
-    mode: list
-    register: out
+#- name: List All files in Bucket
+  #amazon.aws.s3_object:
+    #bucket: min-prometheus-alert-rule
+    #mode: list
+    #register: out
 
 - name: Download All the Objects from S3 Bucket Having Alert files
   amazon.aws.s3_object:
