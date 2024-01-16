@@ -43,6 +43,8 @@
     dest: /tmp/{{component}}-{{env}}.yml
 
 - name: Upload Alert File toS3
-  community.aws.s3_object:
+  amazon.aws.s3_object:
     bucket: min-prometheus-alert-rule
-    file_root: /tmp/{{component}}-{{env}}.yml
+    object: {{component}}-{{env}}.yml
+    src: /tmp/{{component}}-{{env}}.yml
+    mode: put
