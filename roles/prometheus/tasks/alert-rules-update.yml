@@ -11,6 +11,6 @@
     #src: /tmp/{{component}}-{{env}}.yml
   #mode: put
 
-- name: Trigger Prometheus Reload job
-  ansible.builtin.shell: curl -u {{ lookup('aws_ssm', 'jenkins.username', region='us-east-1' ) }}:{{ lookup('aws_ssm', 'jenkins.password', region='us-east-1' ) }} "http://172.31.47.82:8080/job/prometheus-reload/build?token=prometheus"
+#- name: Trigger Prometheus Reload job
+ #ansible.builtin.shell: curl -u {{ lookup('aws_ssm', 'jenkins.username', region='us-east-1' ) }}:{{ lookup('aws_ssm', 'jenkins.password', region='us-east-1' ) }} "http://172.31.47.82:8080/job/prometheus-reload/build?token=prometheus"
 
