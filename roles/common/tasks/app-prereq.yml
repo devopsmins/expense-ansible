@@ -5,10 +5,10 @@
 
 - name: create App Directory
   ansible.builtin.file:
-    path: "{{ app_dir}}"
+    path: "{{ app_dir }}"
     state: directory
-   # owner: "{{app_user}}"
-    #group: "{{app_user}}"
+    owner: "{{app_user}}"
+    group: "{{app_user}}"
 
 - name: Download and extract app content
   ansible.builtin.unarchive:
