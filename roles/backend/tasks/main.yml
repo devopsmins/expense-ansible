@@ -24,6 +24,16 @@
   ansible.builtin.shell: npm install
   args:
     chdir: /app
+- name: Install New Relic NodeJS Library
+  ansible.builtin.shell: npm install newrelic --save
+  args:
+    chdir: /app
+
+- name: Copy Backend StartUP Script
+  ansible.builtin.template:
+    src: run.sh
+    dest: /app/run.sh
+
 - name: Install MYSQL Client
   ansible.builtin.dnf:
     name: mysql
