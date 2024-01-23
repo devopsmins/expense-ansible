@@ -17,6 +17,8 @@
   vars:
     app_dir: /app
     component: backend
+    app_user: expense
+
 - name: Add Application user
   ansible.builtin.user:
     name: expense
