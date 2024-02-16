@@ -43,8 +43,10 @@
   ansible.builtin.dnf:
     name: mysql
     state: present
-- name: Load schema
-  ansible.builtin.shell: mysql -h {{ lookup('aws_ssm', '{{env}}.rds.endpoint', region='us-east-1' ) }} -u{{ lookup('aws_ssm', '{{env}}.rds.username', region='us-east-1' ) }} -p{{ lookup('aws_ssm', '{{env}}.rds.password', region='us-east-1' ) }} < /app/schema/backend.sql
+
+- name: Load Schema
+  ansible.builtin.shell: mysql -h {{ lookup('amazon.aws.aws_ssm', '{{env}}.rds.endpoint', region='us-east-1' ) }} -u{{ lookup('amazon.aws.aws_ssm', '{{env}}.rds.username', region='us-east-1' ) }} -p{{ lookup('amazon.aws.aws_ssm', '{{env}}.rds.password', region='us-east-1' ) }} < /app/schema/backend.sql
+
 
 - name: Import ELK Role- Filebeat
   ansible.builtin.import_role:
