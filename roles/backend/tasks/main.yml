@@ -10,6 +10,11 @@
   ansible.builtin.template:
     src: backend.service
     dest: /etc/systemd/system/backend.service
+
+- name: Add Application user
+  ansible.builtin.user:
+    name: expense
+
 - name: Import Common Role- App Pre-requisites
   ansible.builtin.import_role:
      name: common
@@ -19,9 +24,7 @@
     component: backend
     app_user: expense
 
-- name: Add Application user
-  ansible.builtin.user:
-    name: expense
+
 - name: Download NodeJs Dependencies
   ansible.builtin.shell: npm install
   args:
