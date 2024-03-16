@@ -18,6 +18,8 @@
 
 - name: Download and extract app content
   ansible.builtin.unarchive:
-    src: https://{{ lookup('aws_ssm', 'artifactory.username', region='us-east-1' ) }}:{{ lookup('aws_ssm', 'artifactory.password', region='us-east-1' ) }}@artifactory.devopsmins.online:8081/artifactory/{{ project_name }}-{{ component }}/{{ project_name }}-{{ component }}-1.0.0.zip
+    src: http://{{ lookup('amazon.aws.aws_ssm', 'artifactory.username', region='us-east-1' ) }}:{{ lookup('amazon.aws.aws_ssm', 'artifactory.password', region='us-east-1' ) }}@artifactory.devopsmins.online:8081/artifactory/{{ project_name }}-{{ component }}/{{ project_name }}-{{ component }}-1.0.0.zip
     dest: "{{ app_dir}}"
     remote_src: yes
+
+  #http://artifactory:devopsmins.online:8081/artifactory/expense-backend/expense-backend-1.0.0.zip:
