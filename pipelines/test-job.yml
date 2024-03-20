@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  Pipeline1:
+  pipelin1:
     test-job:
     group: defaultGroup
     materials:
