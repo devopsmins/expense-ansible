@@ -1,10 +1,9 @@
 format_version: 10
 pipelines:
-  test-job:
+  Mutable_Deployment_BACKEND:
     group: defaultGroup
     environment_variables:
-      DEPLOYMENT: testing
-      FOO: bar
+      APP_VERSION: ""
     materials:
       deploy:
         git: http://github.com/devopsmins/expense-ansible
