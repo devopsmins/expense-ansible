@@ -1,6 +1,7 @@
 format_version: 10
 pipelines:
   test-job:
+    group: defaultGroup
     materials:
       deploy:
         git: http://github.com/devopsmins/expense-ansible
