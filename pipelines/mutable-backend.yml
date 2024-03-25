@@ -3,18 +3,22 @@ pipelines:
   Mutable_Deployment_BACKEND:
     group: defaultGroup
     environment_variables:
+      ENV: ""
+      COMPONENT: backend
       APP_VERSION: ""
     materials:
       deploy:
         git: http://github.com/devopsmins/expense-ansible
         shallow_clone: true
-        auto_update: false
+        auto_update: true
         branch: main
     stages:
     - dev:
         fetch_materials: true
         keep_artifacts: false
         clean_workspace: false
+        approval:
+          type: manual
         jobs:
           deploy:
             timeout: 0
