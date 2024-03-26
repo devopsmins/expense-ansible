@@ -3,7 +3,9 @@ pipelines:
   Mutable_Deployment_FRONTEND:
     group: defaultGroup
     environment_variables:
+      ENV: ""
       APP_VERSION: ""
+      COMPONENT: frontend
     materials:
       deploy:
         git: http://github.com/devopsmins/expense-ansible
@@ -12,9 +14,11 @@ pipelines:
         branch: main
     stages:
     - dev:
-        fetch_materials: false
+        fetch_materials: true
         keep_artifacts: false
         clean_workspace: false
+        approval:
+          type: manual
         jobs:
           deploy:
             timeout: 0
