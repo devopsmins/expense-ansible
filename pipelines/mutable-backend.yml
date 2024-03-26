@@ -3,9 +3,9 @@ pipelines:
   Mutable_Deployment_BACKEND:
     group: defaultGroup
     environment_variables:
-      ENV: ""
-      COMPONENT: backend
       APP_VERSION: ""
+      COMPONENT: backend
+
     materials:
       deploy:
         git: http://github.com/devopsmins/expense-ansible
@@ -17,6 +17,8 @@ pipelines:
         fetch_materials: true
         keep_artifacts: false
         clean_workspace: false
+        environment_variables:
+          ENV: dev
         approval:
           type: manual
         jobs:
