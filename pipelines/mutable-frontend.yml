@@ -8,7 +8,7 @@ pipelines:
       deploy:
         git: http://github.com/devopsmins/expense-ansible
         shallow_clone: true
-        auto_update: false
+        auto_update: true
         branch: main
     stages:
     - dev:
