@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  MutableDeployment_Backend:
+  Mutable_Deployment_Backend:
     group: defaultGroup
     environment_variables:
       APP_VERSION: ""
@@ -25,9 +25,9 @@ pipelines:
               timeout: 0
               tasks:
                 - exec:
-                    command: bash
+                    command: echo
                     arguments:
-                      - mutable.sh
+                      - "deploying to dev"
                     run_if: passed
 
       - qa:
