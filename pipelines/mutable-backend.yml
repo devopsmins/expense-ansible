@@ -26,9 +26,9 @@ pipelines:
             timeout: 0
             tasks:
             - exec:
-                command: bash
+                command: echo
                 arguments:
-                  - mutable.sh
+                  - "Deploying to dev env"
                 run_if: passed
 
     - qa:
