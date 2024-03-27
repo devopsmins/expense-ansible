@@ -9,3 +9,4 @@ SSH_PASSWORD=$(aws ssm get-parameter --name "ssh.password" --with-decryption --q
 # Run ansible push on the servers
 ansible-playbook -i inv expense.yml -e component=${COMPONENT} -e env=${ENV} -e version=${APP_VERSION} -e ansible_user=centos -e ansible_password=${SSH_PASSWORD}
 #
+
