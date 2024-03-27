@@ -68,6 +68,8 @@ pipelines:
         fetch_materials: false
         keep_artifacts: false
         clean_workspace: false
+        environment_variables:
+          ENV: prod
         approval:
             type: manual
         jobs:
@@ -75,7 +77,7 @@ pipelines:
             timeout: 0
             tasks:
               - exec:
-                  command: echo
+                  command: bash
                   arguments:
-                    - "Deploying to prod env"
+                    - mutable.sh
                   run_if: passed
