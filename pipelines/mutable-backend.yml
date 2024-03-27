@@ -28,7 +28,7 @@ pipelines:
             - exec:
                 command: bash
                 arguments:
-                  - demo1.sh
+                  - mutable.sh
                 run_if: passed
 
     - qa:
