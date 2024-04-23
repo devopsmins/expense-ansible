@@ -11,8 +11,8 @@
     state: present
 - name: Copy Backend Services file
   ansible.builtin.template:
-    src: backend.service
-    dest: /etc/systemd/system/backend.service
+    src: catalogue.service
+    dest: /etc/systemd/system/catalogue.service
 
 - name: Add Application user
   ansible.builtin.user:
